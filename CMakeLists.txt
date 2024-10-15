@@ -52,7 +52,7 @@ target_compile_definitions(ToneFilterVST PRIVATE "ASSETS=\"${CMAKE_CURRENT_SOURC
 set_target_properties(ToneFilterVST PROPERTIES PREFIX "" OUTPUT_NAME "ToneFilterVST")
 
 if (WIN32 AND CMAKE_COMPILER_IS_GNUCXX)
-	set_target_properties(ToneFilterVST PROPERTIES LINK_FLAGS "-Wl,--whole-archive -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/link.T -static -static-libgcc -static-libstdc++")
+	set_target_properties(ToneFilterVST PROPERTIES LINK_FLAGS "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/link.T -static")
 elseif (APPLE)
     set_target_properties(ToneFilterVST PROPERTIES BUNDLE TRUE)
     set_target_properties(ToneFilterVST PROPERTIES BUNDLE_EXTENSION "vst")
